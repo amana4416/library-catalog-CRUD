@@ -10,7 +10,7 @@
 
 _Duration: 4 hours_
 
-Create afully functional CRUD app that allows library staff and administration to manage their catalogue of book!
+Create a fully functional CRUD app that allows library staff and administration to manage their catalogue of book!
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
