@@ -10,7 +10,7 @@
 
 _Duration: 4 hours_
 
-Create afully functional CRUD app that allows library staff to manage their catalogue of book!
+Create afully functional CRUD app that allows library staff and administration to manage their catalogue of book!
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
@@ -31,7 +31,7 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
   * [Node.js](https://nodejs.org/en/)
   * Express
   * Body Parser
-  * PostgreSQL
+  * [PostgreSQL] (https://www.postgresql.org/download/)
 
 
 ## Installation
@@ -39,7 +39,7 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
 1. Clone this repository for your own access.
 2. Open up your editor of choice and run an `npm install`
 3. Using your preferred database manager - use the provided SQL file to set up the database that tracks your tasks and their status. 
-4. Run `npm start` or node server/server.js`in your terminal
+4. Run `npm start` or `node server/server.js`in your terminal
 5. Navigate to http://localhost:5000/
 
 
@@ -59,4 +59,4 @@ This application can be utilized by library staff or admin to keep track of the 
 
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people!)
