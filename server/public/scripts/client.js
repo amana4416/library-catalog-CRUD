@@ -3,7 +3,7 @@ $(document).ready(onReady);
 function onReady() {
   console.log("hi. let's make a CRUD app.");
   getBooks();
-  $('#submitButton' ).on('click', createBook);
+  $('#submitButton').on('click', createBook);
   $('#catalog').on('click', '.deleteButton', deleteBook);
   $('#catalog').on('click', '.markAsUnavailableButton', markAsUnavailable);
   $('#catalog').on('click', '.markAsAvailableButton', markAsAvailable);
@@ -44,7 +44,7 @@ function getBooks() {
             <button data-id="${book.id}" type="button" class="btn btn-success markAsUnavailableButton">Unavailable</button>
             </td>
             <td>
-            <button data-id="${book.id}" type="button" class="btn btn-success deleteButton">Delete</button>
+            <button data-id="${book.id}" type="button" class="btn btn-danger deleteButton">Delete</button>
             </td>
           </tr>
         `)
@@ -59,7 +59,7 @@ function getBooks() {
           <button data-id="${book.id}" type="button" class="btn btn-success markAsAvailableButton">Available</button>
           </td>
           <td>
-          <button data-id="${book.id}" type="button" class="btn btn-success deleteButton">Delete</button>
+          <button data-id="${book.id}" type="button" class="btn btn-danger deleteButton">Delete</button>
           </td>
         </tr>
       `)

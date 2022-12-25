@@ -1,6 +1,6 @@
 body {
   background-color: #7D6167;
-  /* color: #5D4954; */
+  color: orange;
 }
 
 h1 {
@@ -18,8 +18,18 @@ input {
   margin-bottom: 15px;
 }
 
-button {
+#submitButton,
+.deleteButton,
+.markAsUnavailableButton,
+.markAsAvailableButton {
   background-color: #5D4954;
   color: #F9E0D9;
+  border: #5D4954;
 }
+
+thead, tbody {
+  color: #5D4954;
+}
+
+
 
