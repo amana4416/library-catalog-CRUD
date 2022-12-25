@@ -3,7 +3,7 @@ CREATE TABLE "books" (
   "id" SERIAL PRIMARY KEY,
   "book" VARCHAR(500) NOT NULL,
   "author" VARCHAR(500) NOT NULL,
-  "availability" VARCHAR(5) NOT NULL
+  "availability" VARCHAR(500) NOT NULL
 );
 
 -- Seed Data Template:
@@ -14,3 +14,11 @@ INSERT INTO "books"
   ('The Seven Husbands of Evelyn Hugo', 'Taylor Jenkins Reid', 'Yes'),
   ('In Five Years', 'Rebecca Serle', 'Yes'),
   ('Normal People', 'Sally Rooney', 'No');
+
+-- to display books
+SELECT * FROM "books"
+	ORDER BY "id";
+
+-- to add a new book to the database
+INSERT INTO "tasks" ("book", "author", "availability")
+  VALUES ($1, $2, $3);

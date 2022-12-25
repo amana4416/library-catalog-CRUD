@@ -18,7 +18,7 @@ input {
   margin-bottom: 15px;
 }
 
-#submitButton {
+button {
   background-color: #5D4954;
   color: #F9E0D9;
 }
