@@ -10,7 +10,7 @@
 
 _Duration: 4 hours_
 
-Create afully functional CRUD app that allows ibrary staff to  manage their catalogue of book!
+Create afully functional CRUD app that allows library staff to manage their catalogue of book!
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
@@ -45,7 +45,7 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
 
 ##### Usage:
 
-This application can be utilized by library staf or  admin to keep track of the books in their catalog and their availability status. As new books comes in, admin or staff are able to store the books in the catalog: 
+This application can be utilized by library staff or admin to keep track of the books in their catalog and their availability status. As new books comes in, admin or staff are able to store the books in the catalog: 
 
 1. Using the provided inputs to store information about the books (book title, author name, and current availabilty status)
 2. Pressing the submit button adds the book to the catalog
