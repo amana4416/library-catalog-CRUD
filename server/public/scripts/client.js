@@ -5,6 +5,7 @@ function onReady() {
   getBooks();
   $('#submitButton' ).on('click', createBook);
   $('#catalog').on('click', '.deleteButton', deleteBook);
+  $('#catalog').on('click', '.markAsUnavailableButton', markAsUnavailable);
 }
 
 //function to take inputs and put them into an object
@@ -107,4 +108,22 @@ function deleteBook() {
         })
     } 
   })
+}
+
+//function to update book status to unavailable
+function markAsUnavailable() {
+  console.log('book is unavailable');
+  let idToUpdate = $(this).data().id;
+  console.log(idToUpdate);
+  $.ajax({
+    method: 'PUT',
+    url: `/books/${idToUpdate}`,
+    data: {
+      availability: 'No',
+    },
+  }).then((res) => {
+      getBooks();
+    }).catch((err) => {
+      console.log("Error in PUT /books/:id", err);
+    });
 }

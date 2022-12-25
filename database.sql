@@ -26,3 +26,8 @@ INSERT INTO "tasks" ("book", "author", "availability")
 -- delete a book from the database
 DELETE FROM "books"
   WHERE "id"=$1;
+
+-- update availablity in database
+UPDATE "books"
+  SET "availability"=$1
+  WHERE "id"=$2;
