@@ -31,7 +31,7 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
   * [Node.js](https://nodejs.org/en/)
   * Express
   * Body Parser
-  * [PostgreSQL] (https://www.postgresql.org/download/)
+  * [PostgreSQL](https://www.postgresql.org/download/)
 
 
 ## Installation
