@@ -22,3 +22,7 @@ SELECT * FROM "books"
 -- to add a new book to the database
 INSERT INTO "tasks" ("book", "author", "availability")
   VALUES ($1, $2, $3);
+
+-- delete a book from the database
+DELETE FROM "books"
+  WHERE "id"=$1;

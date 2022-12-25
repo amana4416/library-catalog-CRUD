@@ -4,6 +4,7 @@ function onReady() {
   console.log("hi. let's make a CRUD app.");
   getBooks();
   $('#submitButton' ).on('click', createBook);
+  $('#catalog').on('click', '.deleteButton', deleteBook);
 }
 
 //function to take inputs and put them into an object
@@ -38,10 +39,10 @@ function getBooks() {
             <td>${book.author}</td>
             <td>${book.availability}</td>
             <td>
-            <button type="button" class="btn btn-success markAsUnavailableButton">Unavailable</button>
+            <button data-id="${book.id}" type="button" class="btn btn-success markAsUnavailableButton">Unavailable</button>
             </td>
             <td>
-            <button type="button" class="btn btn-success deleteButton">Delete</button>
+            <button data-id="${book.id}" type="button" class="btn btn-success deleteButton">Delete</button>
             </td>
           </tr>
         `)
@@ -67,7 +68,7 @@ function getBooks() {
   })
 }
 
-//function to add books to table and database
+//function to add books to DOM and database
 function postBooks(newBook) {
   console.log('in POST /books', newBook);
   $.ajax({
@@ -82,5 +83,28 @@ function postBooks(newBook) {
     $('#availabilityInput').val('');
   }).catch((err) => {
     console.log('something broke in POST /books', err);
+  })
+}
+
+//function to delete books from the DOM and database
+function deleteBook() {
+  console.log('deleting a book');
+  let idToDelete = $(this).data().id;
+  swal("Are you sure you want to delete this book?", {
+    title: "Delete Task",
+    icon: "warning",
+    dangerMode: true,
+    buttons: true,
+  }).then((response) => {
+    if (response === true){
+        $.ajax ({
+        method: 'DELETE',
+        url: `/books/${idToDelete}`
+        }).then ((res) => {
+        getBooks();
+        }).catch((err) => {
+        console.log('error in DELETE /books/:id', err);
+        })
+    } 
   })
 }

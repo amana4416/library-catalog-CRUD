@@ -46,6 +46,23 @@ app.post('/books', (req, res) => {
 })
 
 // app.delete()
+app.delete('/books/:id', (req, res) =>{
+  console.log(req.params);
+  let idToDelete = req.params.id;
+  let sqlQuery = `
+      DELETE FROM "books"
+          WHERE "id"=$1;
+  `
+  let sqlValues = [idToDelete];
+  pool.query(sqlQuery, sqlValues)
+  .then((dbRes) => {
+      res.sendStatus(200);
+  })
+  .catch((dbErr) => {
+      console.log('something broke in DELETE /books/:id', dbErr);
+      res.sendStatus(500);
+  })
+})
 
 // app.put()
 
