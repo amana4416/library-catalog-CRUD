@@ -6,6 +6,7 @@ function onReady() {
   $('#submitButton' ).on('click', createBook);
   $('#catalog').on('click', '.deleteButton', deleteBook);
   $('#catalog').on('click', '.markAsUnavailableButton', markAsUnavailable);
+  $('#catalog').on('click', '.markAsAvailableButton', markAsAvailable);
 }
 
 //function to take inputs and put them into an object
@@ -55,10 +56,10 @@ function getBooks() {
           <td>${book.author}</td>
           <td>${book.availability}</td>
           <td>
-          <button type="button" class="btn btn-success markAsAvailableButton">Available</button>
+          <button data-id="${book.id}" type="button" class="btn btn-success markAsAvailableButton">Available</button>
           </td>
           <td>
-          <button type="button" class="btn btn-success deleteButton">Delete</button>
+          <button data-id="${book.id}" type="button" class="btn btn-success deleteButton">Delete</button>
           </td>
         </tr>
       `)
@@ -92,7 +93,7 @@ function deleteBook() {
   console.log('deleting a book');
   let idToDelete = $(this).data().id;
   swal("Are you sure you want to delete this book?", {
-    title: "Delete Task",
+    title: "Delete Book",
     icon: "warning",
     dangerMode: true,
     buttons: true,
@@ -112,7 +113,7 @@ function deleteBook() {
 
 //function to update book status to unavailable
 function markAsUnavailable() {
-  console.log('book is unavailable');
+  console.log('book is not available');
   let idToUpdate = $(this).data().id;
   console.log(idToUpdate);
   $.ajax({
@@ -124,6 +125,24 @@ function markAsUnavailable() {
   }).then((res) => {
       getBooks();
     }).catch((err) => {
-      console.log("Error in PUT /books/:id", err);
+      console.log("Error in PUT /books/:id making unavailable", err);
+    });
+}
+
+//function to update book status to available
+function markAsAvailable() {
+  console.log('book is available');
+  let idToUpdate = $(this).data().id;
+  console.log(idToUpdate);
+  $.ajax({
+    method: 'PUT',
+    url: `/books/${idToUpdate}`,
+    data: {
+      availability: 'Yes',
+    },
+  }).then((res) => {
+      getBooks();
+    }).catch((err) => {
+      console.log("Error in PUT /books/:id making available", err);
     });
 }

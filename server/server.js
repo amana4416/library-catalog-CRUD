@@ -75,15 +75,14 @@ app.put('/books/:id', (req, res) => {
   let sqlQuery = `
     UPDATE "books"
       SET "availability"=$1
-        WHERE "id"=$2;
+      WHERE "id"=$2;
     `
   let sqlValues = [newAvailability, idToUpdate];
   pool.query(sqlQuery, sqlValues)
   .then( (dbRes) => {
     res.sendStatus(200);
-  })
-  .catch( (dbErr) => {
-    console.log('something broke in PUT /books/:id', dbErr)
+  }).catch( (dbErr) => {
+    console.log('Error in PUT /books/:id', dbErr)
     res.sendStatus(500);
   })
 })
