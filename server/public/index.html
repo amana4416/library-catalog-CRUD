@@ -12,11 +12,51 @@
   <title>CRUD Starter</title>
 </head>
 <body>
-  <h1>CRUD Starter</h1>
+  <h1>Library Catalog</h1>
 
-  <section class="card" style="width: 18rem;">
 
-  </section>
+  <main id="mainContent">
+    <div class="container py-2 h-100">
+      <div class="card w-auto p-4 rounded-4 shadow-lg" style="width: 18rem;"">
+        
+        <section id="inputs">
+          <div class="row">
+            <div class="col-6">
+              <input type="text" id="bookInput" placeholder="Book" class="form-control shadow">
+            </div>
+            <div class="col-6">
+              <input type="text" id="authorInput" placeholder="Author" class="form-control shadow">
+            </div>
+          
+            <div class="col-6">
+              <input type="text" id="availabilityInput" placeholder="Available?" class="form-control shadow">
+            </div>
+            <div class="col">
+              <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </section>
 
+        <section id="displayTable">
+          <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">Book</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Available?</th>
+                    <th scope="col">Change Availability</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="catalog">
+              <!-- books will append here -->
+            </tbody>
+        </table>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  
 </body>
 </html>

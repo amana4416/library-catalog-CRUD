@@ -1,11 +1,25 @@
 body {
   background-color: #7D6167;
+  color: #5D4954;
 }
 
 h1 {
-  color: #5D4954;
+  color: #F9E0D9;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .card {
   background-color: #E6DBD0;
 }
+
+input {
+  margin-bottom: 15px;
+}
+
+#submitButton {
+  background-color: #5D4954;
+  color: #F9E0D9;
+}
+
