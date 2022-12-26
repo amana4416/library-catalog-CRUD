@@ -59,4 +59,4 @@ This application can be utilized by library staff or admin to keep track of the 
 
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people!)
+Thanks to [Prime Digital Academy](https://www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people!)
