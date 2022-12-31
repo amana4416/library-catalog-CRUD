@@ -3,7 +3,7 @@ $(document).ready(onReady);
 function onReady() {
   console.log("hi. let's make a CRUD app.");
   getBooks();
-  $('#submitButton').on('click', createBook);
+  $('.submitButton').on('click', createBook);
   $('#catalog').on('click', '.deleteButton', deleteBook);
   $('#catalog').on('click', '.markAsUnavailableButton', markAsUnavailable);
   $('#catalog').on('click', '.markAsAvailableButton', markAsAvailable);
